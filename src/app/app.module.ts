@@ -8,10 +8,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyListComponent } from './company/company-list/company-list.component';
 import { CompanyTableComponent } from './company/company-table/company-table.component';
+import { CompanyEditComponent } from './company/company-edit/company-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, CompanyListComponent, CompanyTableComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule],
+  declarations: [AppComponent, CompanyListComponent, CompanyTableComponent, CompanyEditComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgbModule,
+    HttpClientModule,
+    AppRoutingModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

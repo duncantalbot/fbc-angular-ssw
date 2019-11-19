@@ -1,6 +1,11 @@
 <div class="container">
   <p>Current Companies</p>
-  <button class="btn btn-primary">Add</button>
+  <button
+    class="btn btn-success float-right"
+    [routerLink]="['/company/edit', 0]"
+  >
+    Add
+  </button>
   <fbc-company-table
     [companies]="companies$ | async"
     (deleteCompanyClicked)="deleteCompany($event)"
