@@ -1,7 +1,11 @@
 <div class="container">
   <p>Current Companies</p>
   <button class="btn btn-primary">Add</button>
-  <fbc-company-table [companies]="companies$ | async"> </fbc-company-table>
+  <fbc-company-table
+    [companies]="companies$ | async"
+    (deleteCompanyClicked)="deleteCompany($event)"
+  >
+  </fbc-company-table>
 </div>
 
 <!-- {{ companies | json }} -->
