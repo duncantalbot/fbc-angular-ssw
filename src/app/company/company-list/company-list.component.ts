@@ -13,9 +13,9 @@ export class CompanyListComponent implements OnInit {
 
   ngOnInit() {
     this.companies = [
-      { name: 'Comapny A', email: 'companyA@ssw.com.au', phone: 1234 },
-      { name: 'Comapny B', email: 'companyB@ssw.com.au', phone: 5678 },
-      { name: 'Comapny C', email: 'companyC@ssw.com.au', phone: 9133 }
+      { name: 'Company A', email: 'companyA@ssw.com.au', phone: 1234 },
+      { name: 'Company B', email: 'companyB@ssw.com.au', phone: 5678 },
+      { name: 'Company C', email: 'companyC@ssw.com.au', phone: 9133 }
     ];
   }
 }
