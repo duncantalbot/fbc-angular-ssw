@@ -20,10 +20,12 @@ export class CompanyService {
   }
 
   deleteCompany(company: Company): Observable<Company> {
-    console.log('A company has been deleted');
-    return this.httpClient.delete<Company>(
-      `${this.API_BASE}/company/${company.id}`
-    );
+    return this.httpClient
+      .delete<Company>(`${this.API_BASE}/company/${company.id}`)
+      .pipe(
+        catchError(e => this.errorHandler(e)),
+        finalize(() => console.log('Completed deleting company'))
+      );
   }
 
   errorHandler(e: Error): Observable<any> {

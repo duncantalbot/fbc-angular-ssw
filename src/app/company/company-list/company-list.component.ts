@@ -20,13 +20,12 @@ export class CompanyListComponent implements OnInit {
 
   loadCompanies() {
     return this.companyService.getCompanies().pipe(
-      tap(c => console.log('Got company list', c)),
-      finalize(() => console.log('FINALIZE CALLED BY COMPONENT'))
+      tap(cmps => console.log('Got company list data', cmps)),
+      finalize(() => console.log('Finalize called by component'))
     );
   }
 
   deleteCompany(company: Company) {
-    console.log('Delete button clicked');
     this.companyService
       .deleteCompany(company)
       .subscribe(c => (this.companies$ = this.loadCompanies()));
