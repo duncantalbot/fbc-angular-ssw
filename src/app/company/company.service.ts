@@ -19,7 +19,14 @@ export class CompanyService {
     );
   }
 
-  errorHandler(e: any): Observable<any> {
+  deleteCompany(company: Company): Observable<Company> {
+    console.log('A company has been deleted');
+    return this.httpClient.delete<Company>(
+      `${this.API_BASE}/company/${company.id}`
+    );
+  }
+
+  errorHandler(e: Error): Observable<any> {
     console.error('ERROR HANDLER', e);
     return of({});
   }

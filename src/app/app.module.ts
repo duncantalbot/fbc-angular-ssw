@@ -7,9 +7,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CompanyListComponent } from './company/company-list/company-list.component';
+import { CompanyTableComponent } from './company/company-table/company-table.component';
 
 @NgModule({
-  declarations: [AppComponent, CompanyListComponent],
+  declarations: [AppComponent, CompanyListComponent, CompanyTableComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, NgbModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

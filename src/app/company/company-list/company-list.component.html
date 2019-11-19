@@ -1,24 +1,7 @@
 <div class="container">
   <p>Current Companies</p>
   <button class="btn btn-primary">Add</button>
-  <table class="table table-striped">
-    <thead>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Phone Number</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let company of companies$ | async">
-        <td>{{ company.name }}</td>
-        <td>{{ company.email }}</td>
-        <td>{{ company.phone }}</td>
-        <td class="table-btn">
-          <button class="btn btn-success">Edit</button>
-          <button class="btn btn-danger">Delete</button>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <fbc-company-table [companies]="companies$ | async"> </fbc-company-table>
 </div>
 
 <!-- {{ companies | json }} -->
