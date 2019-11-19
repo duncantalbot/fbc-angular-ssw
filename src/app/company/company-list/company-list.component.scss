@@ -1,4 +1,8 @@
-.table-btn {
-  width: 140px;
-  white-space: nowrap;
+@import '../../../styles.scss';
+
+table {
+  th {
+    background-color: $main-color;
+    color: white;
+  }
 }
