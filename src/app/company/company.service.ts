@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Company } from './company';
-import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, finalize } from 'rxjs/Operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +26,12 @@ export class CompanyService {
         catchError(e => this.errorHandler(e)),
         finalize(() => console.log('Completed deleting company'))
       );
+  }
+
+  addCompany(company: Company): Observable<Company> {
+    return this.httpClient.post<Company>(`${this.API_BASE}/company`, company, {
+      headers: new HttpHeaders().set('content-type', 'application/json')
+    });
   }
 
   errorHandler(e: Error): Observable<any> {
